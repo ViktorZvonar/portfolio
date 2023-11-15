@@ -2,11 +2,16 @@
   padding: 3em;
 }
 
-.form__title {
-  margin-bottom: 1em;
+.form__caller--imperative {
+  margin-bottom: 0.5em;
   font-size: 1.5rem;
   font-weight: 700;
   color: #333;
+}
+
+.form__caller {
+  margin-bottom: 2em;
+  font-size: 1rem;
 }
 
 .form__container {
@@ -53,6 +58,12 @@
 .invisible-button {
   display: none;
 }
+
+/* .password__warning {
+  position: absolute;
+  left: 3em;
+  bottom: 1em;
+} */
 
 @media (max-width: 768px) {
   .form__container {

@@ -18,7 +18,7 @@
   <body>
 
     <aside class="sidebar">
-      <div class="sidebar__container">
+      <section class="sidebar__container">
         <div class="sidebar__icons">
           <svg class="sidebar__sphere">
             <use href="./images/icons.svg#icon-sphere"></use>
@@ -28,7 +28,7 @@
           </svg>
         </div>      
         <a href="./index.html" class="sidebar__title">Paradisiac Island</a>
-      </div>
+      </section>
     </aside>
 
     <header class="header">
@@ -39,62 +39,70 @@
     </header>
      
     <main class="main">
-      <form class="form" action="./portfolio.html">
-        <h1 class="form__title">Let's do this!</h1>
-        <div class="form__container">
-          <div class="form__field">
+      <form class="form" action="./portfolio.html" onsubmit="return validateForm(event)">
+        <section class="form__caller"> 
+          <h1 class="form__caller--imperative">Let's do this!* </h1>
+          <p class="form__caller--warning">*all fields are required !</p>
+        </section>       
+        <section class="form__container">
+          <fieldset class="form__field">
             <label for="first-name" class="form__label">first name</label>
             <input
               class="form__input"
               type="text"
               name="first-name"
-              id="first name"
+              id="first-name"
+              placeholder="John"
               required
             />
-          </div>
-          <div class="form__field">
+          </fieldset>
+          <fieldset class="form__field">
             <label for="last-name" class="form__label">last name</label>
             <input
               class="form__input"
               type="text"
               name="last-name"
               id="last-name"
+              placeholder="Smith"
               required
             />
-          </div>
-          <div class="form__field">
+          </fieldset>
+          <fieldset class="form__field">
             <label for="email" class="form__label">email</label>
             <input
               class="form__input"
               type="email"
               name="email"
               id="email"
+              placeholder="example@example.com"
               required
             />
-          </div>
-          <div class="form__field">
+          </fieldset>
+          <fieldset class="form__field">
             <label for="phone-number" class="form__label">phone number</label>
             <input
               class="form__input"
-              type="number"
+              type="tel"
               name="phone-number"
               id="phone-number"
+              placeholder="+00 000 000 000"
               required
             />
-          </div>
-          <div class="form__field">
+          </fieldset>
+          <fieldset class="form__field">
             <label for="password" class="form__label">password</label>
             <input
               class="form__input"
               type="password"
               name="password"
               id="password"
+              placeholder="complex0Password"
               required
             />
             <span id="passwordError" class="form__error"></span>
-          </div>
+          </fieldset>
 
-          <div class="form__field">
+          <fieldset class="form__field">
             <label for="confirm-password" class="form__label"
               >confirm password</label
             >
@@ -103,12 +111,15 @@
               type="password"
               name="confirm-password"
               id="confirm-password"
+              placeholder="complex0Password"
               required
             />
-          </div>
-        </div>
+            <span id="confirmPasswordError" class="form__error"></span>
+          </fieldset>
+        </section>
         <button type="submit" id="invisibleSubmitButton" class="invisible-button">create account</button>        
       </form>
+      <!-- <p class="password__warning">**Must be 8 characters with uppercase/lowercase letters, numbers.</p>     -->
     </main>
 
     <footer class="footer">
