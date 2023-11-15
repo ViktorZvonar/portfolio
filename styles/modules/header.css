@@ -1,0 +1,11 @@
+.header__title,
+.header__text,
+.header__accent {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+.header__accent {
+  font-style: italic;
+}

@@ -1,0 +1,39 @@
+@import url(./sidebar.css);
+@import url(./header.css);
+@import url(./footer.css);
+
+body {
+  display: grid;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    "sidebar footer";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 30% 1fr;
+  height: 100vh;
+  margin: 0;
+}
+
+.sidebar {
+  background-image: url("../../images/island-img.jpg");
+  background-size: cover;
+  background-position: center;
+  grid-area: sidebar;
+  padding-top: 30%;
+}
+
+.header {
+  grid-area: header;
+  padding: 3em;
+  background: lightgray;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+  padding: 3em;
+  background-color: lightgray;
+}

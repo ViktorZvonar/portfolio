@@ -1,0 +1,49 @@
+.sidebar__container {
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1.5em;
+}
+
+.sidebar__icons {
+  position: relative;
+  width: max(60px, 2em);
+}
+
+.sidebar__plane {
+  position: absolute;
+  top: -5%;
+  right: 0;
+  width: 50%;
+  fill: white;
+  stroke: black;
+  stroke-width: 2px;
+  rotate: 90deg;
+}
+
+.sidebar__sphere {
+  fill: rgb(0, 166, 255);
+  width: 100%;
+  stroke: black;
+  stroke-width: 0.5px;
+}
+
+.sidebar__title {
+  font-family: "Shadows Into Light", cursive;
+  margin-left: 10px;
+  font-size: 2em;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .sidebar__title {
+    margin-left: 0;
+    font-size: 1em;
+    transform: rotate(-90deg);
+  }
+}
