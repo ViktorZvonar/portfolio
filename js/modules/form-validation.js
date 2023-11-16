@@ -8,7 +8,22 @@ const confirmPasswordError = document.getElementById("confirmPasswordError");
 
 function preventNonAlphabeticInput(event) {
   if (!event.key.match(/^[A-Za-z]+$/)) {
-    alert("Provide only letters");
+    alert("Provide only english letters");
+    event.preventDefault();
+  }
+}
+
+function preventNonNumericInput(event) {
+  const phoneNumber = document.getElementById("phone-number");
+
+  if (phoneNumber.value.length === 0 && event.key !== "+") {
+    alert("The phone number must start with a '+'.");
+    event.preventDefault();
+    return;
+  }
+
+  if (phoneNumber.value.length > 0 && !event.key.match(/^[0-9 ]+$/)) {
+    alert("Provide only numbers and spaces.");
     event.preventDefault();
   }
 }
@@ -20,9 +35,10 @@ function passwordAlert() {
   password.removeEventListener("focus", passwordAlert);
 }
 
+password.addEventListener("focus", passwordAlert);
 firstName.addEventListener("keypress", preventNonAlphabeticInput);
 lastName.addEventListener("keypress", preventNonAlphabeticInput);
-password.addEventListener("focus", passwordAlert);
+phoneNumber.addEventListener("keypress", preventNonNumericInput);
 
 function checkPasswords() {
   if (password.value !== confirmPassword.value) {
