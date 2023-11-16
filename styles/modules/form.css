@@ -59,11 +59,18 @@
   display: none;
 }
 
-/* .password__warning {
+.form__input--guiding {
+  border: 1px solid #ccc;
+  color: white;
+  background-color: #007bff;
+  font-size: 1em;
+  padding: 5px;
+  border-radius: 5px;
   position: absolute;
-  left: 3em;
-  bottom: 1em;
-} */
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
 
 @media (max-width: 768px) {
   .form__container {

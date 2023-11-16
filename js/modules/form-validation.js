@@ -4,6 +4,7 @@ const phoneNumber = document.getElementById("phone-number");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirm-password");
 const passwordError = document.getElementById("passwordError");
+const passwordTooltip = document.getElementById("passwordTooltip");
 const confirmPasswordError = document.getElementById("confirmPasswordError");
 
 function preventNonAlphabeticInput(event) {
@@ -28,14 +29,21 @@ function preventNonNumericInput(event) {
   }
 }
 
-function passwordAlert() {
-  alert(
-    "Password must contain 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number.",
-  );
-  password.removeEventListener("focus", passwordAlert);
-}
+// function passwordAlert() {
+//   alert(
+//     "Password must contain 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number.",
+//   );
+//   password.removeEventListener("focus", passwordAlert);
+// }
 
-password.addEventListener("focus", passwordAlert);
+password.addEventListener("focus", () => {
+  passwordTooltip.style.display = "block";
+});
+
+password.addEventListener("blur", () => {
+  passwordTooltip.style.display = "none";
+});
+
 firstName.addEventListener("keypress", preventNonAlphabeticInput);
 lastName.addEventListener("keypress", preventNonAlphabeticInput);
 phoneNumber.addEventListener("keypress", preventNonNumericInput);
