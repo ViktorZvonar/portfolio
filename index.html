@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.css"
@@ -16,34 +19,38 @@
     <title>Form</title>
   </head>
   <body>
-
     <aside class="sidebar">
       <section class="sidebar__container">
-        <div class="sidebar__icons">
-          <svg class="sidebar__sphere">
-            <use href="./images/icons.svg#icon-sphere"></use>
-          </svg>
-          <svg class="sidebar__plane">
-            <use href="./images/icons.svg#icon-airplane"></use>
-          </svg>
-        </div>      
-        <a href="./index.html" class="sidebar__title">Paradisiac Island</a>
+        <svg class="sidebar__icon">
+          <use href="./images/icons.svg#icon-bulb"></use>
+        </svg>
+        <a href="./index.html" class="sidebar__title">Assley Williams</a>
       </section>
     </aside>
 
     <header class="header">
-      <h1 class="header__title">Do you want to get the best trip to a paradisiac island?</br>
-        Sign up <span class="header__accent">now</span> to get started
+      <h1 class="header__title">
+        Hey there! <br />
+        I am Ashley, a pasionate design and photoshop enthusiast!
       </h1>
-      <p class="header__text">You know you want to.</p>
+      <p class="header__text">
+        Waiting to light up <span class="header__accent">any</span> of your
+        ideas...
+      </p>
     </header>
-     
+
     <main class="main">
-      <form class="form" action="./portfolio.html" onsubmit="return validateForm(event)">
-        <section class="form__caller"> 
-          <h1 class="form__caller--imperative">Let's do this!* </h1>
+      <form
+        class="form"
+        action="./portfolio.html"
+        onsubmit="return validateForm(event)"
+      >
+        <section class="form__caller">
+          <h1 class="form__caller--imperative">
+            Sign up to see my project portfolio!*
+          </h1>
           <p class="form__caller--warning">*all fields are required!</p>
-        </section>       
+        </section>
         <section class="form__container">
           <fieldset class="form__field">
             <label for="first-name" class="form__label">first name</label>
@@ -99,8 +106,13 @@
               placeholder="complex0Password"
               required
             />
-            <span id="passwordTooltip" class="form__input--guiding" style="display:none;">
-              Must contain at least 8 characters, an uppercase letter, a lowercase letter, a number.
+            <span
+              id="passwordTooltip"
+              class="form__input--guiding"
+              style="display: none"
+            >
+              Must contain at least 8 characters, an uppercase letter, a
+              lowercase letter, a number.
             </span>
             <span id="passwordError" class="form__error"></span>
           </fieldset>
@@ -120,17 +132,24 @@
             <span id="confirmPasswordError" class="form__error"></span>
           </fieldset>
         </section>
-        <button type="submit" id="invisibleSubmitButton" class="invisible-button">create account</button>        
+        <button
+          type="submit"
+          id="invisibleSubmitButton"
+          class="invisible-button"
+        >
+          create account
+        </button>
       </form>
-      </main>
+    </main>
 
     <footer class="footer">
-      <a class="footer__button" class href="#" id="footerLink">create account</a>
-      <p class="form-login__text">Already have an account?
-        <a href="" class="form-login__link">Log in
-        </a>
+      <a class="footer__button" class href="#" id="footerLink"
+        >create account</a
+      >
+      <p class="form-login__text">
+        Already have an account?
+        <a href="" class="form-login__link">Log in </a>
       </p>
     </footer>
-
   </body>
 </html>

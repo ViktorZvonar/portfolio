@@ -9,6 +9,10 @@
   color: #333;
 }
 
+.form__caller--warning {
+  color: rgb(208, 43, 43);
+}
+
 .form__caller {
   margin-bottom: 2em;
   font-size: 1rem;
@@ -34,13 +38,13 @@
 
 .form__input {
   padding: 0.5em;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #ccc;
   border-radius: 4px;
   max-width: 20rem;
 }
 
 .form__input:focus {
-  border-color: #007bff;
+  border-color: rgb(66, 163, 192);
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
@@ -60,10 +64,10 @@
 }
 
 .form__input--guiding {
-  border: 1px solid #ccc;
+  border: 1px solid rgb(66, 163, 192);
   color: white;
-  background-color: #007bff;
-  font-size: 12px;
+  background-color: rgb(66, 163, 192);
+  box-shadow: 0 0 10px rgba(255, 0, 212, 0.5);
   padding: 5px;
   border-radius: 5px;
   position: absolute;
