@@ -90,6 +90,8 @@ export function validateForm(event) {
     passwordError.style.display = "block";
     password.classList.add("form__input--error");
     isValid = false;
+  } else {
+    password.classList.remove("form__input--error");
   }
 
   if (!validateName(firstName.value)) {
@@ -97,6 +99,8 @@ export function validateForm(event) {
     alert("Please enter a valid name: min 2 characters.");
     firstName.classList.add("form__input--error");
     isValid = false;
+  } else {
+    firstName.classList.remove("form__input--error");
   }
 
   if (!validateName(lastName.value)) {
@@ -104,6 +108,8 @@ export function validateForm(event) {
     alert("Please enter a valid name: min 2 characters.");
     lastName.classList.add("form__input--error");
     isValid = false;
+  } else {
+    lastName.classList.remove("form__input--error");
   }
 
   if (!validateEmail(email.value)) {
@@ -113,6 +119,8 @@ export function validateForm(event) {
     );
     email.classList.add("form__input--error");
     isValid = false;
+  } else {
+    email.classList.remove("form__input--error");
   }
 
   if (!validateInternationalPhoneNumber(phoneNumber.value)) {
@@ -120,6 +128,8 @@ export function validateForm(event) {
     alert("Invalid phone number format. Please enter in international format.");
     phoneNumber.classList.add("form__input--error");
     isValid = false;
+  } else {
+    phoneNumber.classList.remove("form__input--error");
   }
 
   return isValid;
