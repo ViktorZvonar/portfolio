@@ -8,27 +8,10 @@
   padding: 1.5em;
 }
 
-.sidebar__icons {
-  position: relative;
-  width: max(60px, 2em);
-}
-
-.sidebar__plane {
-  position: absolute;
-  top: -5%;
-  right: 0;
-  width: 50%;
-  fill: white;
-  stroke: black;
+.sidebar__icon {
+  stroke: pink;
   stroke-width: 2px;
-  rotate: 90deg;
-}
-
-.sidebar__sphere {
-  fill: rgb(0, 166, 255);
-  width: 100%;
-  stroke: black;
-  stroke-width: 0.5px;
+  width: max(60px, 2em);
 }
 
 .sidebar__title {

@@ -28,10 +28,12 @@ li {
   list-style: none;
 }
 
-input {
+input,
+fieldset {
   margin: 0;
   padding: 0;
   outline: none;
+  border: none;
 }
 
 img,

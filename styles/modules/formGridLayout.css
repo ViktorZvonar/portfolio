@@ -14,10 +14,19 @@ body {
   margin: 0;
 }
 
+.main {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
 .sidebar {
-  background-image: url("../../images/island-img.jpg");
+  background-image: url("../../images/diego-ph-fIq0tET6llw-unsplash.jpg");
   background-size: cover;
+
   background-position: center;
+  background-repeat: no-repeat;
   grid-area: sidebar;
   padding-top: 30%;
 }
@@ -25,7 +34,7 @@ body {
 .header {
   grid-area: header;
   padding: 3em;
-  background: lightgray;
+  background: rgb(66, 163, 192);
 }
 
 .main {
@@ -35,5 +44,5 @@ body {
 .footer {
   grid-area: footer;
   padding: 3em;
-  background-color: lightgray;
+  background-color: rgb(66, 163, 192);
 }
