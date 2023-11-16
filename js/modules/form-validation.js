@@ -4,25 +4,49 @@ const phoneNumber = document.getElementById("phone-number");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirm-password");
 const passwordError = document.getElementById("passwordError");
+const passwordTooltip = document.getElementById("passwordTooltip");
 const confirmPasswordError = document.getElementById("confirmPasswordError");
 
 function preventNonAlphabeticInput(event) {
   if (!event.key.match(/^[A-Za-z]+$/)) {
-    alert("Provide only letters");
+    alert("Provide only english letters");
     event.preventDefault();
   }
 }
 
-function passwordAlert() {
-  alert(
-    "Password must contain 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number.",
-  );
-  password.removeEventListener("focus", passwordAlert);
+function preventNonNumericInput(event) {
+  const phoneNumber = document.getElementById("phone-number");
+
+  if (phoneNumber.value.length === 0 && event.key !== "+") {
+    alert("The phone number must start with a '+'.");
+    event.preventDefault();
+    return;
+  }
+
+  if (phoneNumber.value.length > 0 && !event.key.match(/^[0-9 ]+$/)) {
+    alert("Provide only numbers and spaces.");
+    event.preventDefault();
+  }
 }
+
+// function passwordAlert() {
+//   alert(
+//     "Password must contain 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number.",
+//   );
+//   password.removeEventListener("focus", passwordAlert);
+// }
+
+password.addEventListener("focus", () => {
+  passwordTooltip.style.display = "block";
+});
+
+password.addEventListener("blur", () => {
+  passwordTooltip.style.display = "none";
+});
 
 firstName.addEventListener("keypress", preventNonAlphabeticInput);
 lastName.addEventListener("keypress", preventNonAlphabeticInput);
-password.addEventListener("focus", passwordAlert);
+phoneNumber.addEventListener("keypress", preventNonNumericInput);
 
 function checkPasswords() {
   if (password.value !== confirmPassword.value) {
