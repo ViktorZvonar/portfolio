@@ -1,5 +1,6 @@
 const firstName = document.getElementById("first-name");
 const lastName = document.getElementById("last-name");
+const email = document.getElementById("email");
 const phoneNumber = document.getElementById("phone-number");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirm-password");
@@ -14,9 +15,7 @@ function preventNonAlphabeticInput(event) {
   }
 }
 
-function preventNonNumericInput(event) {
-  const phoneNumber = document.getElementById("phone-number");
-
+function preventIncorrectNumberInput(event) {
   if (phoneNumber.value.length === 0 && event.key !== "+") {
     alert("The phone number must start with a '+'.");
     event.preventDefault();
@@ -29,13 +28,6 @@ function preventNonNumericInput(event) {
   }
 }
 
-// function passwordAlert() {
-//   alert(
-//     "Password must contain 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number.",
-//   );
-//   password.removeEventListener("focus", passwordAlert);
-// }
-
 password.addEventListener("focus", () => {
   passwordTooltip.style.display = "block";
 });
@@ -46,7 +38,7 @@ password.addEventListener("blur", () => {
 
 firstName.addEventListener("keypress", preventNonAlphabeticInput);
 lastName.addEventListener("keypress", preventNonAlphabeticInput);
-phoneNumber.addEventListener("keypress", preventNonNumericInput);
+phoneNumber.addEventListener("keypress", preventIncorrectNumberInput);
 
 function checkPasswords() {
   if (password.value !== confirmPassword.value) {
@@ -64,10 +56,8 @@ function checkPasswords() {
 }
 
 function validateName(name) {
-  const regex = /^[A-Za-z]+$/;
-  const isValidName = regex.test(name.trim());
-  console.log(`Validating name: ${name}, Result: ${isValidName}`);
-  return isValidName;
+  const regex = /^[A-Za-z]{2,}$/;
+  return regex.test(name.trim());
 }
 
 function validatePasswordComplexity(password) {
@@ -78,6 +68,11 @@ function validatePasswordComplexity(password) {
 function validateInternationalPhoneNumber(phoneNumber) {
   const regex = /^\+\d{1,3} \d{1,3} \d{3,4} \d{3,4}$/;
   return regex.test(phoneNumber);
+}
+
+function validateEmail(email) {
+  const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return regex.test(email);
 }
 
 export function validateForm(event) {
@@ -97,15 +92,33 @@ export function validateForm(event) {
     isValid = false;
   }
 
-  if (!validateName(firstName.value) || !validateName(lastName.value)) {
+  if (!validateName(firstName.value)) {
     event.preventDefault();
-    alert("Please enter a valid name.");
+    alert("Please enter a valid name: min 2 characters.");
+    firstName.classList.add("form__input--error");
+    isValid = false;
+  }
+
+  if (!validateName(lastName.value)) {
+    event.preventDefault();
+    alert("Please enter a valid name: min 2 characters.");
+    lastName.classList.add("form__input--error");
+    isValid = false;
+  }
+
+  if (!validateEmail(email.value)) {
+    event.preventDefault();
+    alert(
+      "Invalid email format. Please use @ and a top-level domain indication (.com et cetera).",
+    );
+    email.classList.add("form__input--error");
     isValid = false;
   }
 
   if (!validateInternationalPhoneNumber(phoneNumber.value)) {
     event.preventDefault();
     alert("Invalid phone number format. Please enter in international format.");
+    phoneNumber.classList.add("form__input--error");
     isValid = false;
   }
 
