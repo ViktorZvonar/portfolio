@@ -228,7 +228,7 @@ body {
   .about-me-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2em 5em 2em;
+    grid-template-rows: 2em 4em 2em;
     grid-template-areas:
       "empty header"
       "empty middle"
