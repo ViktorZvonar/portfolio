@@ -173,14 +173,6 @@ body {
   grid-gap: 0;
 }
 
-@media only screen and (max-width: 768px) {
-  .background-container {
-    display: grid;
-    grid-template-columns: auto auto;
-    position: relative;
-  }
-}
-
 @media only screen and (max-width: 425px) {
   .my-work-section {
     padding: 5%;
@@ -198,37 +190,35 @@ body {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .icons-container {
     display: none;
   }
+
   .background-container {
+    display: grid;
     grid-template-rows: auto auto;
-    grid-template-columns: 100%;
+    grid-template-columns: auto auto;
     position: relative;
   }
 
   .image-div {
-    grid-row: 1;
-    grid-column: 1;
-    max-width: 40%;
-    max-height: 40%;
-    padding: 20px 0 0 20px;
+    width: 40%;
     z-index: 2;
     position: absolute;
-    top: 30px;
+    top: 15%;
     left: 0;
+    padding: 0;
   }
 
   .profile-image {
-    width: 100%;
-    height: auto;
+    object-fit: cover;
   }
 
   .about-me-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2em 4em 2em;
+    grid-template-rows: 10% auto auto;
     grid-template-areas:
       "empty header"
       "empty middle"
