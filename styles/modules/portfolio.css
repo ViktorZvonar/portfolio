@@ -216,7 +216,7 @@ body {
     padding: 20px 0 0 20px;
     z-index: 2;
     position: absolute;
-    top: 10px;
+    top: 30px;
     left: 0;
   }
 
@@ -228,27 +228,30 @@ body {
   .about-me-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: 2em 5em 2em;
     grid-template-areas:
-      "content header"
-      "content bottom";
+      "empty header"
+      "empty middle"
+      "bottom bottom";
     grid-row: 1;
     grid-column: 1;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     position: relative;
     z-index: 1;
-    padding: 20px;
+    grid-row-gap: 5px;
+    grid-column-gap: 0;
   }
 
-  .about-me-card h1 {
+  .card-header {
     grid-area: header;
+    margin: 0;
   }
 
-  .about-me-card p:first-of-type {
-    grid-area: content;
+  .card-middle {
+    grid-area: middle;
   }
 
-  .about-me-card p:last-of-type {
+  .card-bottom {
     grid-area: bottom;
   }
 }
