@@ -7,7 +7,12 @@
   color: #ffffff;
 }
 
+.header__title {
+  font-family: "Roboto", sans-serif;
+}
+
 .header__text {
+  font-family: "Playfair Display", serif;
   text-align: start;
   max-width: fit-content;
   padding: 5px 30px;
@@ -16,5 +21,6 @@
   box-shadow: 0 0 10px rgb(255, 192, 238);
 }
 .header__accent {
-  font-style: italic;
+  font-family: "Shadows Into Light Two", cursive;
+  font-size: xx-large;
 }
