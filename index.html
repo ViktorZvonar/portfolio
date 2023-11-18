@@ -24,7 +24,7 @@
   <body>
     <aside class="sidebar">
       <section class="sidebar__container">
-        <svg class="sidebar__icon">
+        <svg class="sidebar__icon" aria-label="Light bulb icon">
           <use href="./images/icons.svg#icon-bulb"></use>
         </svg>
         <a href="./index.html" class="sidebar__title">Ashley Williams</a>
@@ -117,7 +117,11 @@
               Must contain at least 8 characters, an uppercase letter, a
               lowercase letter, a number.
             </span>
-            <span id="passwordError" class="form__error"></span>
+            <span
+              id="passwordError"
+              class="form__error"
+              aria-live="assertive"
+            ></span>
           </fieldset>
 
           <fieldset class="form__field">
@@ -132,13 +136,18 @@
               placeholder="complex0Password"
               required
             />
-            <span id="confirmPasswordError" class="form__error"></span>
+            <span
+              id="confirmPasswordError"
+              class="form__error"
+              aria-live="assertive"
+            ></span>
           </fieldset>
         </section>
         <button
           type="submit"
           id="invisibleSubmitButton"
           class="invisible-button"
+          aria-label="Create account"
         >
           create account
         </button>
@@ -146,7 +155,13 @@
     </main>
 
     <footer class="footer">
-      <a class="footer__button" href="#" id="footerLink">create account</a>
+      <a
+        class="footer__button"
+        aria-label="Link to the submit button"
+        href="#"
+        id="footerLink"
+        >create account</a
+      >
       <p class="form-login__text">
         Already have an account?
         <a href="" class="form-login__link">Log in </a>
